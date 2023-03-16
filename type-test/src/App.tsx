@@ -14,9 +14,9 @@ export const App = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   const userData: User[] = [
-    {id: 0, name: "satosi", age: 10, personalColor: "black"},
-    {id: 2, name: "satosi", age: 10, personalColor: "black"},
-    {id: 3, name: "satosi", age: 10, personalColor: "black"},
+    {id: 1, name: "satosi", age: 10, personalColor: "black"},
+    {id: 2, name: "satosi", age: 10, personalColor: "red"},
+    {id: 3, name: "satosi", age: 10, personalColor: "blue"},
     {id: 4, name: "satosi", age: 10, personalColor: "black"},
   ];
 
@@ -27,7 +27,7 @@ export const App = () => {
   return (
     <div className="App">
       {users.map(user => (
-        <ListItem id={user.id} name={user.name} age={user.age} />
+        <ListItem id={user.id} name={user.name} age={user.age} personalColor={user.personalColor} />
       ))}
     </div>
   );
