@@ -1,11 +1,34 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
+import { ListItem } from './components/ListItem';
 
-function App() {
+//ユーザ情報の型定義
+type User = {
+  id: number;
+  name: string;
+  age: number;
+  personalColor: string;
+};
+
+export const App = () => {
+  //ユーザのデータ（User型の配列）
+  const [users, setUsers] = useState<User[]>([]);
+
+  const userData: User[] = [
+    {id: 0, name: "satosi", age: 10, personalColor: "black"},
+    {id: 2, name: "satosi", age: 10, personalColor: "black"},
+    {id: 3, name: "satosi", age: 10, personalColor: "black"},
+    {id: 4, name: "satosi", age: 10, personalColor: "black"},
+  ];
+
+  useEffect(() => {
+    setUsers(userData);
+  }, []);
+
   return (
     <div className="App">
-      <h1>動作しています！</h1>
+      {users.map(user => (
+        <ListItem id={user.id} name={user.name} age={user.age} />
+      ))}
     </div>
   );
 }
-
-export default App;
