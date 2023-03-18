@@ -1,7 +1,9 @@
+import { Form } from "./components/Form"
+
 export const App = () => {
   return (
     <div>
-      <h1>動いています！</h1>
+      <Form />
     </div>
   )
 }
