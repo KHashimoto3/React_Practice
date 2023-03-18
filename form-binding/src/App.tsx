@@ -1,9 +1,7 @@
-function App() {
+export const App = () => {
   return (
-    <div className="App">
-      <h1>動いてます！</h1>
+    <div>
+      <h1>動いています！</h1>
     </div>
-  );
+  )
 }
-
-export default App;
